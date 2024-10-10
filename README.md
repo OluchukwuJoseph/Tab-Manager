@@ -11,6 +11,25 @@
 - Set important tabs as immune from closure.
 - Notify users before closing tabs.
 
+## File Structure
+
+```plaintext
+Tab-Manager/
+│
+├── icons/                          # Folder for custom icons
+│
+├── popup/                          # Popup displayed when the extension icon is clicked (Home page)
+│
+├── scripts/                        # Folder for JavaScript logic
+│
+├── styles/                         # Folder for shared styles
+│   └── common.css                  # Common styles across popup and options page
+│
+├── manifest.json                   # Chrome extension manifest file
+├── README.md                       # Project README file
+└── .gitignore                      # Gitignore file to exclude unnecessary files (e.g., node_modules)
+```
+
 ## Development Guidelines
 
 ### Branching Strategy
