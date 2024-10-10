@@ -2,7 +2,7 @@
 
 ## Overview
 
-**Tab-Manager** is a Chrome extension aimed at reducing tab clutter for developers and digital workers. It allows users to manage duplicate and unused tabs and close them based on user-defined time limits. This extension is currently under development as part of a collaborative project.
+**Tab Manager** is a Chrome extension aimed at reducing tab clutter for developers and digital workers. It allows users to manage duplicate and unused tabs and close them based on user-defined time limits. This extension is currently under development as part of a collaborative project.
 
 ## Features
 
@@ -10,6 +10,25 @@
 - Customizable time limit to determine when to close inactive tabs.
 - Set important tabs as immune from closure.
 - Notify users before closing tabs.
+
+## File Structure
+
+```plaintext
+Tab-Manager/
+│
+├── icons/                          # Folder for custom icons
+│
+├── popup/                          # Popup displayed when the extension icon is clicked (Home page)
+│
+├── scripts/                        # Folder for JavaScript logic
+│
+├── styles/                         # Folder for shared styles
+│   └── common.css                  # Common styles across popup and options page
+│
+├── manifest.json                   # Chrome extension manifest file
+├── README.md                       # Project README file
+└── .gitignore                      # Gitignore file to exclude unnecessary files (e.g., node_modules)
+```
 
 ## Development Guidelines
 
