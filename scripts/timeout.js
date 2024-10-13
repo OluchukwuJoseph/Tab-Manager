@@ -47,3 +47,5 @@ async function getTimeout() {
   // Return the retrieved timeouts as an array
   return [duplicateTimeout, unusedTimeout];
 }
+
+export { setDuplicateTimeout, setUnusedTimeout, getTimeout };
