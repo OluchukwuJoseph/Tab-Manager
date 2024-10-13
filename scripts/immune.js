@@ -90,3 +90,5 @@ async function getImmuneTabsInfo() {
 
   return immuneTabDetails;
 }
+
+export { addImmuneTab, getImmuneTabs, getImmuneTabsInfo };
