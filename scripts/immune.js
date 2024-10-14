@@ -91,4 +91,50 @@ async function getImmuneTabsInfo() {
   return immuneTabDetails;
 }
 
-export { addImmuneTab, getImmuneTabs, getImmuneTabsInfo };
+/**
+ * Retrieves a list of all currently open tabs excluding the immune tabs.
+ * This function is used to provide information about non-immune tabs, such as their names (titles) and URLs,
+ * so that users can select tabs to add to the immune list via the frontend interface.
+ *
+ * @returns {Promise<Array<Object>>} - A promise that resolves to an array of objects,
+ * each containing the 'title' and 'url' of a non-immune tab.
+ *
+ * @example
+ * getNonImmuneTabs().then(tabs => {
+ *   console.log(tabs);
+ *   // Output might be:
+ *   // [
+ *   //   { title: 'YouTube', url: 'https://www.youtube.com/' },
+ *   //   { title: 'Google Search', url: 'https://www.google.com/' }
+ *   // ]
+ * });
+ */
+async function getNonImmuneTabs() {
+  try {
+    // Step 1: Retrieve the list of immune tabs from Chrome's local storage
+    const result = await chrome.storage.local.get('immuneTabs');
+    const immuneTabs = result.immuneTabs || [];
+
+    // Step 2: Get all currently open tabs across all browser windows
+    const allTabs = await chrome.tabs.query({});
+
+    // Step 3: Filter out tabs whose URLs are in the immune tabs list
+    const nonImmuneTabs = allTabs.filter(tab => !immuneTabs.includes(tab.url));
+
+    // Step 4: Map the filtered tabs to include only necessary information (title and URL)
+    const tabInfo = nonImmuneTabs.map(tab => ({
+      title: tab.title || 'No title available', // Provide a fallback title if none exists
+      url: tab.url
+    }));
+
+    // Return the array of non-immune tab information
+    return tabInfo;
+  } catch (error) {
+    console.error('Error retrieving non-immune tabs:', error);
+    // Return an empty array or handle the error appropriately
+    return [];
+  }
+}
+
+
+export { addImmuneTab, getImmuneTabs, getImmuneTabsInfo, getNonImmuneTabs };
