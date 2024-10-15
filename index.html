@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <title>Tab Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="tab-manager">
+    <header class="header">
+      <div class="icon-header">
+        <img class="image" src="./icons/icon-16.png" alt="">
+        <h1>Tab Manager</h1>
+      </div>
+      <a href="#" class="how-it-works">How it works</a>
+    </header>
+    
+    <section class="timer-section">
+      <h3>Tab Cleanup Timer</h3>
+
+      <div class="timer">
+        <label for="duplicate-timeout">Duplicate tab timeout</label>
+        <div class="input-group">
+          <select id="duplicate-timeout">
+            <option value="0.5">30 minutes</option>
+            <option value="1" selected>1 hour</option>
+            <option value="2">2 hours</option>
+            <option value="3">3 hours</option>
+            <option value="6">6 hours</option>
+            <option value="12">12 hours</option>               
+            <option value="24">24 hours</option>
+          </select>
+          <button class="save-btn">Save</button>
+        </div>
+      </div>
+
+      <div class="timer">
+        <label for="unused-timeout">Unused tab timeout</label>
+        <div class="input-group">
+          <select id="duplicate-timeout">
+            <option value="0.5">30 minutes</option>
+            <option value="1" selected>1 hour</option>
+            <option value="2">2 hours</option>
+            <option value="3">3 hours</option>
+            <option value="6">6 hours</option>
+            <option value="12">12 hours</option>
+            <option value="24">24 hours</option>
+          </select>
+          <button class="save-btn">Save</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="immune-tabs">
+      <div class="add-section">
+        <h3>Immune Tabs</h3>
+        <button class="add-btn">Add +</button>
+      </div>
+
+      <div class="immune-tab-item">
+        <p>ChatGPT</p>
+        <a href="#" class="tab-link">gpc.com/c/6704...2f29</a>
+        <span class="remaining-time">3 hours</span>
+        <button class="delete-btn">🗑️</button>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
